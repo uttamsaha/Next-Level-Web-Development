@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            height: 100px;
+            align-items: center;
+            background-color: black;
+            position: relative;
+        }
+
+        .logo>h1 {
+            color: white;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-items ul li a {
+            /* color: white; */
+            color: red;
+            font-weight: 500;
+        }
+
+        .fa-bars {
+            display: none;
+        }
+
+        
+
+        @media (max-width:688px) {
+            .fa-bars {
+                display: block;
+            }
+
+            .nav-items ul {
+                display: block;
+            }
+
+            .nav-items {
+                position: absolute;
+                top: 0;
+                right: -230px;
+                background-color: black;
+                width: 220px;
+                height: 100vh;
+                transition: 1s;
+                display: none;
+            }
+
+            ul li a {
+                display: block;
+                color: white !important;
+                margin-bottom: 20px !important;
+                font-size: 20px;
+            }
+
+            .fa-solid {
+                color: white;
+            }
+
+            .fa-xmark {
+                padding: 15px 0px 55px 15px;
+                font-size: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Your Logo</h1>
+            </div>
+            <i class="fa-solid fa-bars"></i>
+            <div class="nav-items">
+                <i class="fa-solid fa-xmark"></i>
+                <ul>
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Price</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <script>
+        const faBar = document.querySelector('.fa-bars');
+        const xmark = document.querySelector('.fa-xmark');
+        const navItems = document.querySelector('.nav-items');
+        faBar.addEventListener('click', () => {
+            navItems.style.right = "0px";
+            navItems.style.display = "block";
+            // navItems.style.transition = "display 1s ease";
+        });
+
+        xmark.addEventListener('click', () => {
+            navItems.style.display = "none";
+            // navItems.style.transition = "display 1s ease";
+        })
+    </script>
+</body>
+
+</html>
